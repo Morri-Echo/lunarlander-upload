@@ -8,12 +8,13 @@ __pycache__/
 .env
 outputs/
 *.zip
+!archives/original-outputs.zip
 *.mp4
 !reports/replay.mp4
 *.pptx
 *.log
 external/
-archives/
+archives/migration-outputs.zip
 .migration-check/
 .pytest_cache/
 ~$*
