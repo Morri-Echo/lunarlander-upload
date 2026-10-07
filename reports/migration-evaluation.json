@@ -1,0 +1,34 @@
+{
+  "model": "outputs/ppo/ppo-LunarLander-v3.zip",
+  "env_id": "LunarLander-v3",
+  "seed": 12345,
+  "episodes": 10,
+  "deterministic": true,
+  "mean_reward": 229.735662,
+  "std_reward": 16.786787882630986,
+  "episode_rewards": [
+    259.67701,
+    244.124434,
+    204.450736,
+    218.863012,
+    229.33048,
+    222.650208,
+    248.49426,
+    206.747656,
+    228.354593,
+    234.664231
+  ],
+  "episode_lengths": [
+    394,
+    442,
+    418,
+    400,
+    427,
+    403,
+    412,
+    424,
+    431,
+    396
+  ],
+  "mean_reward_at_least_200": true
+}

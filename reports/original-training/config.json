@@ -1,0 +1,18 @@
+{
+  "steps": 1000000,
+  "envs": 16,
+  "seed": 42,
+  "backend": "subproc",
+  "output": "outputs/ppo",
+  "resume": null,
+  "ppo": {
+    "n_steps": 1024,
+    "batch_size": 64,
+    "n_epochs": 4,
+    "gamma": 0.999,
+    "gae_lambda": 0.98,
+    "ent_coef": 0.01
+  },
+  "env_id": "LunarLander-v3",
+  "device": "cpu"
+}

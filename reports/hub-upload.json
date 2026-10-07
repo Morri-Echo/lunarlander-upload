@@ -1,0 +1,14 @@
+{
+  "status": "uploaded_and_verified",
+  "date": "2026-10-07",
+  "repo": "ZZW-Echo/ppo-LunarLander-v3",
+  "url": "https://huggingface.co/ZZW-Echo/ppo-LunarLander-v3",
+  "revision": "7a877388a09ea9fc8f7820ae6127e13390d4c200",
+  "private": false,
+  "sha256_matches_local": {
+    "README.md": true,
+    "results.json": true,
+    "replay.mp4": true,
+    "ppo-LunarLander-v3.zip": true
+  }
+}

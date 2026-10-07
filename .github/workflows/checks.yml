@@ -1,0 +1,25 @@
+name: Windows Python 3.9 Checks
+on: [push, pull_request, workflow_dispatch]
+jobs:
+  core:
+    runs-on: windows-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.9'
+          cache: pip
+          cache-dependency-path: |
+            requirements.txt
+            requirements-lock.txt
+      - name: Install packaging tools
+        run: python -m pip install pip==25.3 setuptools==75.8.2 wheel==0.45.1
+      - name: Install fixed dependencies
+        run: python -m pip install -r requirements.txt -c requirements-lock.txt
+      - name: Check dependencies
+        run: python -m pip check
+      - name: Verify portability
+        run: python -m unittest discover -s tests -v
+      - name: Verify environments
+        run: python -m src.smoke_test

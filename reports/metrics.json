@@ -1,0 +1,130 @@
+{
+  "training": {
+    "requested_steps": 1000000,
+    "actual_steps": 1015808,
+    "seconds": 338.7262675
+  },
+  "evaluation": {
+    "model": "outputs/ppo/ppo-LunarLander-v3.zip",
+    "env_id": "LunarLander-v3",
+    "seed": 12345,
+    "episodes": 10,
+    "deterministic": true,
+    "mean_reward": 229.735662,
+    "std_reward": 16.786787882630986,
+    "episode_rewards": [
+      259.67701,
+      244.124434,
+      204.450736,
+      218.863012,
+      229.33048,
+      222.650208,
+      248.49426,
+      206.747656,
+      228.354593,
+      234.664231
+    ],
+    "episode_lengths": [
+      394,
+      442,
+      418,
+      400,
+      427,
+      403,
+      412,
+      424,
+      431,
+      396
+    ],
+    "mean_reward_at_least_200": true
+  },
+  "legacy": {
+    "repo": "Classroom-workshop/assignment2-omar",
+    "filename": "ppo-LunarLander-v2.zip",
+    "env_id": "Gym LunarLander-v2 via Shimmy",
+    "seed": 12345,
+    "episodes": 10,
+    "mean_reward": 302.0400329,
+    "std_reward": 18.389514313781536,
+    "episode_rewards": [
+      304.977915,
+      300.949546,
+      326.808796,
+      319.306673,
+      286.024194,
+      293.027898,
+      315.046843,
+      258.630516,
+      308.892825,
+      306.735123
+    ],
+    "episode_lengths": [
+      186,
+      164,
+      217,
+      189,
+      173,
+      169,
+      156,
+      138,
+      156,
+      173
+    ]
+  },
+  "smoke": {
+    "python": "3.9.21 (main, Dec 11 2024, 16:35:24) [MSC v.1929 64 bit (AMD64)]",
+    "platform": "Windows-10-10.0.22621-SP0",
+    "cuda_available": false,
+    "checks": {
+      "gymnasium_reset_step_render": "passed",
+      "16_vectorized_environments": "passed",
+      "shimmy_gym_v26": "passed",
+      "mujoco_physics_and_render": "passed"
+    },
+    "versions": {
+      "gymnasium": "1.1.1",
+      "stable-baselines3": "2.6.0",
+      "torch": "2.8.0",
+      "Box2D": "2.3.10",
+      "gym": "0.26.2",
+      "shimmy": "2.0.0",
+      "mujoco": "3.3.7",
+      "numpy": "1.26.4"
+    }
+  },
+  "genesis": {
+    "backend": "cpu",
+    "viewer": false,
+    "steps": 100,
+    "initial_position": [
+      0.0,
+      0.0,
+      1.0
+    ],
+    "final_position": [
+      1.233256341492961e-08,
+      -7.675345914393006e-10,
+      0.09989223629236221
+    ],
+    "check": "gravity_and_ground_collision_passed"
+  },
+  "isaac": {
+    "status": "not_run",
+    "reason": "16GB RAM; separate Python 3.11 required",
+    "gpu": "RTX 3060 12GB"
+  },
+  "hub_upload": {
+    "status": "uploaded_and_verified",
+    "date": "2026-10-07",
+    "repo": "ZZW-Echo/ppo-LunarLander-v3",
+    "url": "https://huggingface.co/ZZW-Echo/ppo-LunarLander-v3",
+    "revision": "7a877388a09ea9fc8f7820ae6127e13390d4c200",
+    "private": false,
+    "sha256_matches_local": {
+      "README.md": true,
+      "results.json": true,
+      "replay.mp4": true,
+      "ppo-LunarLander-v3.zip": true
+    }
+  }
+}
