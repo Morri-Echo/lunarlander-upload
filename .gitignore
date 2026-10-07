@@ -9,6 +9,7 @@ __pycache__/
 outputs/
 *.zip
 *.mp4
+!reports/replay.mp4
 *.pptx
 *.log
 external/

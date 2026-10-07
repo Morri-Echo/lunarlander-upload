@@ -4,6 +4,8 @@
 
 已发布模型：[ZZW-Echo/ppo-LunarLander-v3](https://huggingface.co/ZZW-Echo/ppo-LunarLander-v3)。原始 10 局评分为 **229.74 ± 16.79**，实际训练 1,015,808 步。详情见 [实验结果](reports/results.md) 和 [每局评分](reports/metrics.json)。
 
+**视频回放：[打开 GitHub 视频文件](reports/replay.mp4) · [直接观看或下载 MP4](https://github.com/Morri-Echo/lunarlander-upload/raw/refs/heads/main/reports/replay.mp4) · [Hugging Face 内嵌播放器](https://huggingface.co/ZZW-Echo/ppo-LunarLander-v3#replay)**
+
 ![训练曲线](reports/training.png)
 
 ## 新电脑安装
@@ -84,6 +86,7 @@ powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\run_experiment.ps1
 | `src/`、`scripts/` | 实验代码、安装及运行入口 |
 | `requirements*.txt` | 核心依赖及完整版本快照，Genesis 独立安装 |
 | `reports/` | 首次完整实验的评分、曲线、发布和迁移验收记录 |
+| `reports/replay.mp4` | 原始已训练模型的 395 帧视频回放，随代码提交 |
 | `reports/original-training/` | 首次训练 CSV、评估数组、配置与耗时 |
 | `docs/simulators.md` | 仿真安装说明、Isaac 未验收状态 |
 | `outputs/` | 本次模型、评分、视频、曲线、latest-metrics.json，Git 忽略 |
@@ -139,7 +142,7 @@ git commit -m "Update week 1 RL practice"
 git push origin main
 ```
 
-提交代码、依赖、文档、报告和自动验证。环境、缓存、token、模型、视频、原 PPT 及本地归档不会提交。模型和视频已有公开 Hugging Face 下载入口。GitHub Actions 检查依赖、迁移处理和环境接口，不做完整训练、Genesis 或 Isaac 验收。GitHub Windows runner 无可用 OpenGL 驱动，因此自动检查显式传入 `--skip-mujoco-render`，保留 MuJoCo 物理检查并在结果中记录渲染跳过；本地默认 smoke test 仍检查 MuJoCo 渲染。
+提交代码、依赖、文档、报告、原始回放 `reports/replay.mp4` 和自动验证。环境、缓存、token、模型、新运行生成的视频、原 PPT 及本地归档不会提交。模型和视频也有公开 Hugging Face 下载入口。GitHub Actions 检查依赖、迁移处理和环境接口，不做完整训练、Genesis 或 Isaac 验收。GitHub Windows runner 无可用 OpenGL 驱动，因此自动检查显式传入 `--skip-mujoco-render`，保留 MuJoCo 物理检查并在结果中记录渲染跳过；本地默认 smoke test 仍检查 MuJoCo 渲染。
 
 ## 兼容性
 
