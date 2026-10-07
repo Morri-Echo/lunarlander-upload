@@ -139,7 +139,7 @@ git commit -m "Update week 1 RL practice"
 git push origin main
 ```
 
-提交代码、依赖、文档、报告和自动验证。环境、缓存、token、模型、视频、原 PPT 及本地归档不会提交。模型和视频已有公开 Hugging Face 下载入口。GitHub Actions 检查依赖、迁移处理和环境接口，不做完整训练、Genesis 或 Isaac 验收。
+提交代码、依赖、文档、报告和自动验证。环境、缓存、token、模型、视频、原 PPT 及本地归档不会提交。模型和视频已有公开 Hugging Face 下载入口。GitHub Actions 检查依赖、迁移处理和环境接口，不做完整训练、Genesis 或 Isaac 验收。GitHub Windows runner 无可用 OpenGL 驱动，因此自动检查显式传入 `--skip-mujoco-render`，保留 MuJoCo 物理检查并在结果中记录渲染跳过；本地默认 smoke test 仍检查 MuJoCo 渲染。
 
 ## 兼容性
 

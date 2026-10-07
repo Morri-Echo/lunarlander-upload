@@ -1,3 +1,4 @@
+import argparse
 import importlib.metadata
 import platform
 import sys
@@ -13,6 +14,10 @@ from src.common import ROOT, save_json
 
 
 def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--skip-mujoco-render", action="store_true",
+                        help="Skip OpenGL rendering on CI runners without a graphics driver")
+    args = parser.parse_args()
     output = ROOT / "outputs/smoke"
     output.mkdir(parents=True, exist_ok=True)
     result = {"python": sys.version, "platform": platform.platform(),
@@ -57,10 +62,14 @@ def main():
     for _ in range(500):
         mujoco.mj_step(model, data)
     assert 0.08 < data.qpos[2] < 0.12
-    with mujoco.Renderer(model, height=240, width=320) as renderer:
-        renderer.update_scene(data)
-        imageio.imwrite(output / "mujoco.png", renderer.render())
-    result["checks"]["mujoco_physics_and_render"] = "passed"
+    if args.skip_mujoco_render:
+        result["checks"]["mujoco_physics"] = "passed"
+        result["checks"]["mujoco_render"] = "skipped: explicit --skip-mujoco-render"
+    else:
+        with mujoco.Renderer(model, height=240, width=320) as renderer:
+            renderer.update_scene(data)
+            imageio.imwrite(output / "mujoco.png", renderer.render())
+        result["checks"]["mujoco_physics_and_render"] = "passed"
     result["versions"] = {name: importlib.metadata.version(name) for name in
                            ["gymnasium", "stable-baselines3", "torch", "Box2D", "gym", "shimmy", "mujoco", "numpy"]}
     save_json(output / "results.json", result)

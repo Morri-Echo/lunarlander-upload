@@ -22,4 +22,4 @@ jobs:
       - name: Verify portability
         run: python -m unittest discover -s tests -v
       - name: Verify environments
-        run: python -m src.smoke_test
+        run: python -m src.smoke_test --skip-mujoco-render

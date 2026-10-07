@@ -19,4 +19,4 @@
 
 主目录不携带虚拟环境、用户缓存、认证 token、PPT 检查截图或迁移测试目录。原始输出备份为 `archives/original-outputs.zip`，不包含 token。首次训练的精简日志保存在 `reports/original-training/`，公开模型、评分和视频可以从 Hugging Face 固定提交重新下载。
 
-新运行结果写到 `outputs/`，原始验收报告保留在 `reports/`。核心与 Genesis 依赖分别固定，提供安装脚本；GitHub Actions 将在上传后验证核心安装和环境接口。尚未在 GitHub 执行过该工作流。Isaac Sim 仍为未运行状态，整理不会改变这个限制。
+新运行结果写到 `outputs/`，原始验收报告保留在 `reports/`。核心与 Genesis 依赖分别固定，提供安装脚本。上传后首次 GitHub Actions 的依赖和迁移测试通过，MuJoCo 渲染因云端 Windows 无 OpenGL 驱动失败；工作流已改为显式跳过 MuJoCo 渲染并保留物理检查。本地默认 smoke test 的完整渲染验收不变。Isaac Sim 仍为未运行状态，整理不会改变这个限制。
